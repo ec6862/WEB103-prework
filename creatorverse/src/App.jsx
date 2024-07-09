@@ -13,7 +13,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path = "/" element={<ShowCreators/>}>
-            <Route path = "/add" element={<AddCreator/>}/>
+            <Route path = "/new" element={<AddCreator/>}/>
             <Route path = "/ViewCreator/:symbol" element={<ViewCreator/>}/>
             <Route path = "/edit/:symbol" element={<EditCreator/>}/>
           </Route>
