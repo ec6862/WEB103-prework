@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { supabase } from "../client";
+
 
 const AddCreator = () => {
+    const addNewCreator = async (event) => {
+        event.preventDefault();
+        const { data, error } = await supabase.from("creatorverse");
+    }
+
+
     return (
         <div>
-        <h1>Add Creator</h1>
+            <form>
+                <input 
+                    type="text" 
+                    placeholder="Name"
+                />
+            </form>
         </div>
     );
 };
