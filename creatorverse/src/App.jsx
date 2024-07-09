@@ -1,21 +1,26 @@
 import React, { useState } from 'react'
-import { BrowserRouter, useRoutes } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useRoutes } from 'react-router-dom'
 import './App.css'
-import ShowCreators from './pages/ShowCreators'
-import AddCreator from './pages/AddCreator'
-import ViewCreator from './pages/ViewCreator'
+import ShowCreators from './pages/ShowCreators.jsx'
+import AddCreator from './pages/AddCreator.jsx'
+import ViewCreator from './pages/ViewCreator.jsx'
+import EditCreator from './pages/EditCreator.jsx'
 
 
 const App = () => {
-  <BrowserRouter>
-    <Routes>
-      <Route path = "/" element={ShowCreators}></Route>
-      <Route path = "/add" element={AddCreator}></Route>
-      <Route path = "/ViewCreator/:symbol" element={ViewCreator}></Route>
-      <Route path = "/edit/:symbol" element={EditCreator}></Route>
-    </Routes>
-
-  </BrowserRouter>
+  return (
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path = "/" element={<ShowCreators/>}>
+            <Route path = "/add" element={<AddCreator/>}/>
+            <Route path = "/ViewCreator/:symbol" element={<ViewCreator/>}/>
+            <Route path = "/edit/:symbol" element={<EditCreator/>}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  )
 }
 
-export default App
+export default App;
