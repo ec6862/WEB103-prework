@@ -18,12 +18,16 @@ const AddCreator = () => {
         <div>
             <form>
                 <label>Name</label>
-                <input 
+                <input
                     type="text" 
                     placeholder="Name"
                     onChange={(event) => setName(event.target.value)}
+                    // testing from creatorverse, idk what it does
                 />
-                <label>url</label>
+                <label>
+                    "URL"
+                    <p>URL for something</p>
+                </label>
                 <input
                     type="text"
                     placeholder="url"
