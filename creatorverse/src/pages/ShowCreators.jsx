@@ -1,24 +1,32 @@
-import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import React, { useEffect, useState} from 'react';
+import { supabase } from '../client';
+import { useParams } from 'react-router-dom';
 
 const ShowCreators = () => {
+    let params = useParams();
+
+    const [list, setList] = useState([]);
+    const index = parseInt(params.symbol, 10);
+
+    useEffect(() => {
+        const getData = async () => {
+            const { data, error } = await supabase
+            .from("creators")
+            .select("*")
+            .eq("id", index);
+
+            setList(data);
+            if (error)
+                console.error("Error fetching post data: ", error.message);
+        }
+        
+        getData();
+    })
     return (
-        // Add a background to replicate the website, otherwise this is good!
-        // Can use TailwindCSS later on to fix class properties
         <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link className="" to="/">Show Creators</Link>
-                    </li>
-                    <li>
-                        <Link className="" to="/new">Add Creator</Link>
-                    </li>
-                </ul>
-            </nav>
-            <Outlet/>
+
         </div>
-    );
+    )
 }
 
 export default ShowCreators;
