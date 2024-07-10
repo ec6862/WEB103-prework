@@ -1,19 +1,21 @@
 import React, { useEffect, useState} from 'react';
 import { supabase } from '../client';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+
+// Next: display list in console or in main
 
 const ShowCreators = () => {
-    let params = useParams();
+    // let params = useParams();
 
     const [list, setList] = useState([]);
-    const index = parseInt(params.symbol, 10);
+    // const index = parseInt(params.symbol, 10);
+    // console.log("index", index);
 
     useEffect(() => {
         const getData = async () => {
             const { data, error } = await supabase
             .from("creators")
-            .select("*")
-            .eq("id", index);
+            .select("*");
 
             setList(data);
             if (error)
@@ -24,7 +26,18 @@ const ShowCreators = () => {
     })
     return (
         <div>
-
+            {
+                list.map((post, i) =>
+                    post.name != "" ? (
+                        <div>
+                            <Link to={`/ViewCreator/${post.id}`} key={i}>
+                                <p>Name: {post.name}</p>
+                            </Link>
+                        </div>
+                        
+                    ) : <p>No post available</p>
+                )
+            }
         </div>
     )
 }
