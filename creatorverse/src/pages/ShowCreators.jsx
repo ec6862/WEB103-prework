@@ -23,18 +23,16 @@ const ShowCreators = () => {
         }
         
         getData();
-    })
+    }, []);
+
     return (
         <div>
             {
                 list.map((post, i) =>
-                    post.name != "" ? (
-                        <div>
-                            <Link to={`/ViewCreator/${post.id}`} key={i}>
-                                <p>Name: {post.name}</p>
-                            </Link>
-                        </div>
-                        
+                    post.name != "" ? (    
+                        <Link to={`/ViewCreator/${post.id}`} key={i}>
+                            <p>Name: {post.name}</p>
+                        </Link>
                     ) : <p>No post available</p>
                 )
             }
