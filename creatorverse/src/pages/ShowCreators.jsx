@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react';
 import { supabase } from '../client';
 import { useParams, Link } from 'react-router-dom';
 
-// Next: display list in console or in main
+// Next:
 
 const ShowCreators = () => {
     // let params = useParams();
