@@ -22,10 +22,13 @@ const ViewCreator = () => {
         <div>
             {
                 list.map((post, i) =>
-                    post.name != "" ? (    
-                        <Link to={`/ViewCreator/${post.id}`} key={i}>
-                            <p>Name: {post.name}</p>
-                        </Link>
+                    post.name != "" ? (
+                        <>
+                            <p key={i}>Name: {post.name}</p>
+                            <p>URL: {post.url}</p>
+                            <p>Description: {post.description}</p>
+                            <p>Image: {post.imageURL}</p>
+                        </>
                     ) : <p>No post available</p>
                 )
             }
