@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "../client"
 import { useParams, Link } from "react-router-dom";
+import Card from "../components/Card";
 
 const ViewCreator = () => {
     const params = useParams();
@@ -21,6 +22,7 @@ const ViewCreator = () => {
     return (
         <div>
             {
+                
                 list.map((post, i) =>
                     post.name != "" ? (
                         <>
