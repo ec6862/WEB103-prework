@@ -25,9 +25,10 @@ const ViewCreator = () => {
     useEffect(() => {
         if (list.length > 0) {
             console.log("List name: ", list[0].name)
+            console.log("List data: ", list);
         }
     }, [list]) // 7/15 stopped here: Working on why we cannot print list[0].name
-    // Started working on this because we are trying to import Card into this function
+    // Started working on this because we are trying to import Card into this function-
 
     return (
         <div>
@@ -37,6 +38,7 @@ const ViewCreator = () => {
                 <p>Description: {post.description}</p>
                 <p>Image: {post.imageURL}</p> */}
                 {/* <Card value = {list[0].name} key={i}/> */}
+                <Card name = {list[0].name} url={list[0].url} description={list[0].description} imageURL={list[0].imageURL}/>
             </>
         </div>
     )

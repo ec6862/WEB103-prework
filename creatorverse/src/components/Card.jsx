@@ -7,7 +7,10 @@ const Card = ({name, url, description, imageURL}) => {
     // PROGRESS: started async, not finished 7/9
     return (
         <div>
-            <h1>Card</h1>
+            <p>Name: {name}</p>
+            <p>URL: {url}</p>
+            <p>Description: {description}</p>
+            <p>Image: {imageURL}</p>
         </div>
     )
 }
