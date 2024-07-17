@@ -5,6 +5,7 @@ import { supabase } from "../client";
 const Card = ({name, url, description, imageURL}) => {
     // Here, we are fetching the data for the creators
     // PROGRESS: started async, not finished 7/9
+    console.log("Name: ", name);
     return (
         <div>
             <p>Name: {name}</p>

@@ -32,14 +32,18 @@ const ViewCreator = () => {
 
     return (
         <div>
-            <>
-                {/* <p key={i}>Name: {post.name}</p>
-                <p>URL: {post.url}</p>
-                <p>Description: {post.description}</p>
-                <p>Image: {post.imageURL}</p> */}
-                {/* <Card value = {list[0].name} key={i}/> */}
-                <Card name = {list[0].name} url={list[0].url} description={list[0].description} imageURL={list[0].imageURL}/>
-            </>
+            {
+                list.length > 0 ? (
+                    <Card 
+                        name={list[0].name}
+                        url={list[0].url}
+                        description={list[0].description}
+                        imageURL={list[0].imageURL}
+                    />
+                ) : (
+                    <p>List is empty</p>
+                )
+            }
         </div>
     )
 }
