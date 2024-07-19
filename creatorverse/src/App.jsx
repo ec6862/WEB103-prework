@@ -7,6 +7,9 @@ import EditCreator from './pages/EditCreator.jsx'
 import ShowCreators from './pages/ShowCreators.jsx'
 import ViewCreator from './pages/ViewCreator.jsx'
 
+// Step 1, 2, 3, 4, 5, 7: Finished
+// Step 6: I used Card for viewing a single creator instead of just displaying the stats, might have to change Card's functionality
+// Step 8(Edit/Updating), 9(Deleting): Not Started
 
 const App = () => {
   return (

@@ -19,6 +19,12 @@ const EditCreator = () => {
         }
         getData();
     }, []);
+
+    return (
+        <div>
+            EditCreator for {index}
+        </div>
+    )
 }
 
 export default EditCreator;

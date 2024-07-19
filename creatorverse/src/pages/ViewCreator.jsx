@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "../client"
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Card from "../components/Card";
 
 const ViewCreator = () => {
     const params = useParams();
     const index = parseInt(params.symbol, 10);
+    const navigate = useNavigate();
     const [list, setList] = useState([]);
+
+    const handleEditClicker = () => {
+        navigate(`/edit/${index}`);
+    }
 
     useEffect(()  => {
         const getData = async () => {
@@ -44,6 +49,7 @@ const ViewCreator = () => {
                     <p>List is empty</p>
                 )
             }
+            <button onClick={handleEditClicker}>Edit</button>
         </div>
     )
 }

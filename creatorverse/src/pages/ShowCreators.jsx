@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import { supabase } from '../client';
 import { useParams, Link } from 'react-router-dom';
+import Card from "../components/Card";
 
 // Next:
 
@@ -29,11 +30,11 @@ const ShowCreators = () => {
         <div>
             {
                 list.map((post, i) =>
-                    post.name != "" ? (    
+                    list.length > 0 ? (    
                         <Link to={`/ViewCreator/${post.id}`} key={i}>
-                            <p>Name: {post.name}</p>
+                            <Card name={post.name}/>
                         </Link>
-                    ) : <p>No post available</p>
+                    ) : <p>No posts available</p>
                 )
             }
         </div>
