@@ -13,30 +13,60 @@ const EditCreator = () => {
             .from("creators")
             .select("*")
             .eq("id", index);
-            setList(data);
             if (error)
                 console.error("Error fetching post data: ", error.message);
+            else
+                setList(data);
         }
         getData();
     }, [index]);
 
     useEffect(() => {
         if (list.length > 0) {
-            console.log("Symbol: ", index);
+            console.log("Symbol: ", list[0].name);
         }
     }, [list]);
 
     return (
         <div>
             EditCreator for {index}
-            <form>
-                <label>Name: </label>
-                <input
-                    type="text"
-                    placeholder="Type here.."
-                    value={list[0].name}
-                />
-            </form>
+            {
+                list.length > 0 ? (
+                    <div> 
+                        <form>
+                            <label>Name: </label>
+                            <input
+                                type="text"
+                                placeholder="Type here..."
+                                value={list[0].name}
+                            /> <hr/>
+                            <label>Url: </label>
+                            <input
+                                type="text"
+                                placeholder="Type here..."
+                                value={list[0].url}
+                            /> <hr/>
+                            <label>Description: </label>
+                            <input
+                                type="text"
+                                placeholder="Type here..."
+                                value={list[0].description}
+                            /> <hr/>
+                            <label>Image: </label>
+                            <input
+                                type="text"
+                                placeholder="Type here..."
+                                value={list[0].imageURL}
+                            /> <hr/>
+                        </form>
+                        <button>Edit</button>
+                    </div>
+                ) : (
+                    <div>
+
+                    </div>
+                )
+            }
 
         </div>
     )
