@@ -18,11 +18,26 @@ const EditCreator = () => {
                 console.error("Error fetching post data: ", error.message);
         }
         getData();
-    }, []);
+    }, [index]);
+
+    useEffect(() => {
+        if (list.length > 0) {
+            console.log("Symbol: ", index);
+        }
+    }, [list]);
 
     return (
         <div>
             EditCreator for {index}
+            <form>
+                <label>Name: </label>
+                <input
+                    type="text"
+                    placeholder="Type here.."
+                    value={list[0].name}
+                />
+            </form>
+
         </div>
     )
 }

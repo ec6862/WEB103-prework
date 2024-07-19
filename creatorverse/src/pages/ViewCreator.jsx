@@ -6,7 +6,7 @@ import Card from "../components/Card";
 const ViewCreator = () => {
     const params = useParams();
     const index = parseInt(params.symbol, 10);
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // note that navigate function is used here to teleport to the edit page instead of the typical <Link>
     const [list, setList] = useState([]);
 
     const handleEditClicker = () => {
@@ -39,12 +39,14 @@ const ViewCreator = () => {
         <div>
             {
                 list.length > 0 ? (
-                    <Card 
-                        name={list[0].name}
-                        url={list[0].url}
-                        description={list[0].description}
-                        imageURL={list[0].imageURL}
-                    />
+                    <div>
+                        <Card 
+                            name={list[0].name}
+                            url={list[0].url}
+                            description={list[0].description}
+                            imageURL={list[0].imageURL}
+                        />
+                    </div>
                 ) : (
                     <p>List is empty</p>
                 )
