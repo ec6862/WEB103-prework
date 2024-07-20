@@ -7,6 +7,14 @@ const EditCreator = () => {
     const index = parseInt(params.symbol, 10);
     const [list, setList] = useState([]);
 
+    const editPost = () => {
+
+    }
+
+    const deletePost = () => {
+
+    }
+
     useEffect(() => {
         const getData = async () => {
             const { data, error } = await supabase
@@ -59,11 +67,12 @@ const EditCreator = () => {
                                 value={list[0].imageURL}
                             /> <hr/>
                         </form>
-                        <button>Edit</button>
+                        <button onClick={editPost}>Edit</button>
+                        <button onClick={deletePost}>Delete</button>
                     </div>
                 ) : (
                     <div>
-
+                        Not Available
                     </div>
                 )
             }
