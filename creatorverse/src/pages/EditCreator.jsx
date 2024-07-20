@@ -6,9 +6,26 @@ const EditCreator = () => {
     const params = useParams(); // for edit data, we might ahve to use props to get the accurate rather than symbol (7/13)
     const index = parseInt(params.symbol, 10);
     const [list, setList] = useState([]);
+    const [name, setName] = useState("");
 
-    const editPost = () => {
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+    }
 
+    const editPost = async (event) => {
+        event.preventDefault();
+
+        const { data, error } = await supabase
+        .from("creators")
+        .update({name: name})
+        .eq("id", index)
+        .select();
+
+        if (data) {
+            console.log("Post updated successfully:", data);
+        } else if (error) {
+            console.error("Error updating post:", error.message);
+        }
     }
 
     const deletePost = () => {
@@ -32,6 +49,7 @@ const EditCreator = () => {
     useEffect(() => {
         if (list.length > 0) {
             console.log("Symbol: ", list[0].name);
+            setName(list[0].name);
         }
     }, [list]);
 
@@ -46,7 +64,8 @@ const EditCreator = () => {
                             <input
                                 type="text"
                                 placeholder="Type here..."
-                                value={list[0].name}
+                                value={name}
+                                onChange={handleNameChange}
                             /> <hr/>
                             <label>Url: </label>
                             <input
