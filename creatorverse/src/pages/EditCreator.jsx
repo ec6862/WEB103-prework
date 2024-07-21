@@ -8,13 +8,14 @@ const EditCreator = () => {
     const [list, setList] = useState([]);
     const [name, setName] = useState("");
     const [url, setURL] = useState("");
+    const [description, setDescription] = useState("");
 
     const editPost = async (event) => {
         event.preventDefault();
 
         const { data, error } = await supabase
         .from("creators")
-        .update({name: name})
+        .update({name: name, url: url})
         .eq("id", index)
         .select();
 
@@ -23,6 +24,8 @@ const EditCreator = () => {
         } else if (error) {
             console.error("Error updating post:", error.message);
         }
+
+        
     }
 
     const deletePost = () => {
@@ -47,9 +50,11 @@ const EditCreator = () => {
         if (list.length > 0) {
             console.log("Name: ", list[0].name);
             console.log("URL: ", list[0].url);
+            console.log("Description: ", list[0].description);
 
             setName(list[0].name);
             setURL(list[0].url);
+            setDescription(list[0].description);
         }
     }, [list]);
 
@@ -78,7 +83,8 @@ const EditCreator = () => {
                             <input
                                 type="text"
                                 placeholder="Type here..."
-                                value={list[0].description}
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
                             /> <hr/>
                             <label>Image: </label>
                             <input
