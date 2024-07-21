@@ -27,8 +27,11 @@ const EditCreator = () => {
         }
     }
 
-    const deletePost = () => {
+    const deletePost = async (event) => {
+        event.preventDefault();
+        await supabase.from("creators").delete().eq("id", index);
 
+        console.log("Post deleted successfully!");
     }
 
     useEffect(() => {
