@@ -7,10 +7,7 @@ const EditCreator = () => {
     const index = parseInt(params.symbol, 10);
     const [list, setList] = useState([]);
     const [name, setName] = useState("");
-
-    const handleNameChange = (e) => {
-        setName(e.target.value);
-    }
+    const [url, setURL] = useState("");
 
     const editPost = async (event) => {
         event.preventDefault();
@@ -48,8 +45,11 @@ const EditCreator = () => {
 
     useEffect(() => {
         if (list.length > 0) {
-            console.log("Symbol: ", list[0].name);
+            console.log("Name: ", list[0].name);
+            console.log("URL: ", list[0].url);
+
             setName(list[0].name);
+            setURL(list[0].url);
         }
     }, [list]);
 
@@ -65,13 +65,14 @@ const EditCreator = () => {
                                 type="text"
                                 placeholder="Type here..."
                                 value={name}
-                                onChange={handleNameChange}
+                                onChange={(e) => setName(e.target.value)}
                             /> <hr/>
                             <label>Url: </label>
                             <input
                                 type="text"
                                 placeholder="Type here..."
-                                value={list[0].url}
+                                value={url}
+                                onChange={(e) => setURL(e.target.value)}
                             /> <hr/>
                             <label>Description: </label>
                             <input
@@ -86,8 +87,6 @@ const EditCreator = () => {
                                 value={list[0].imageURL}
                             /> <hr/>
                         </form>
-                        <button onClick={editPost}>Edit</button>
-                        <button onClick={deletePost}>Delete</button>
                     </div>
                 ) : (
                     <div>
@@ -95,7 +94,8 @@ const EditCreator = () => {
                     </div>
                 )
             }
-
+            <button onClick={editPost}>Edit</button>
+            <button onClick={deletePost}>Delete</button>
         </div>
     )
 }
