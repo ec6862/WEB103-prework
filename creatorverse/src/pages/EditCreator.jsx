@@ -6,9 +6,10 @@ const EditCreator = () => {
     const params = useParams(); // for edit data, we might ahve to use props to get the accurate rather than symbol (7/13)
     const index = parseInt(params.symbol, 10);
     const [list, setList] = useState([]);
-    const [name, setName] = useState("");
-    const [url, setURL] = useState("");
-    const [description, setDescription] = useState("");
+    const [name, updateName] = useState("");
+    const [url, updateURL] = useState("");
+    const [description, updateDescription] = useState("");
+    const [imageURL, updateImageURL] = useState("");
 
     const editPost = async (event) => {
         event.preventDefault();
@@ -49,10 +50,12 @@ const EditCreator = () => {
             console.log("Name: ", list[0].name);
             console.log("URL: ", list[0].url);
             console.log("Description: ", list[0].description);
+            console.log("Image: ", list[0].imageURL);
 
-            setName(list[0].name);
-            setURL(list[0].url);
-            setDescription(list[0].description);
+            updateName(list[0].name);
+            updateURL(list[0].url);
+            updateDescription(list[0].description);
+            updateImageURL(list[0].imageURL);
         }
     }, [list]);
 
@@ -68,27 +71,28 @@ const EditCreator = () => {
                                 type="text"
                                 placeholder="Type here..."
                                 value={name}
-                                onChange={(e) => setName(e.target.value)}
+                                onChange={(e) => updateName(e.target.value)}
                             /> <hr/>
                             <label>Url: </label>
                             <input
                                 type="text"
                                 placeholder="Type here..."
                                 value={url}
-                                onChange={(e) => setURL(e.target.value)}
+                                onChange={(e) => updateURL(e.target.value)}
                             /> <hr/>
                             <label>Description: </label>
                             <input
                                 type="text"
                                 placeholder="Type here..."
                                 value={description}
-                                onChange={(e) => setDescription(e.target.value)}
+                                onChange={(e) => updateDescription(e.target.value)}
                             /> <hr/>
                             <label>Image: </label>
                             <input
                                 type="text"
                                 placeholder="Type here..."
-                                value={list[0].imageURL}
+                                value={imageURL}
+                                onChange={(e) => updateImageURL(e.target.value)}
                             /> <hr/>
                         </form>
                     </div>
