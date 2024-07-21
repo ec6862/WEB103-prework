@@ -15,7 +15,7 @@ const EditCreator = () => {
 
         const { data, error } = await supabase
         .from("creators")
-        .update({name: name, url: url})
+        .update({name: name, url: url, description: description})
         .eq("id", index)
         .select();
 
@@ -24,8 +24,6 @@ const EditCreator = () => {
         } else if (error) {
             console.error("Error updating post:", error.message);
         }
-
-        
     }
 
     const deletePost = () => {
