@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BrowserRouter, Routes, Route, useRoutes } from 'react-router-dom'
 import './App.css'
+import "./index.css" 
 import Navbar from './components/Navbar.jsx'
 import AddCreator from './pages/AddCreator.jsx'
 import EditCreator from './pages/EditCreator.jsx'

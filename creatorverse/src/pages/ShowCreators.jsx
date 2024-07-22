@@ -27,13 +27,15 @@ const ShowCreators = () => {
     }, []);
 
     return (
-        <div>
+        <div className="text-3xl font-bold underline">
             {
                 list.map((post, i) =>
-                    list.length > 0 ? (    
-                        <Link to={`/ViewCreator/${post.id}`} key={i}>
-                            <Card name={post.name}/>
-                        </Link>
+                    list.length > 0 ? (
+                        <div key={i}> 
+                            <Link to={`/ViewCreator/${post.id}`}>
+                                <Card name={post.name}/>
+                            </Link>
+                        </div>
                     ) : <p>No posts available</p>
                 )
             }
