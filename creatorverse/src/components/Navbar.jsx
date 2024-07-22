@@ -8,12 +8,12 @@ const Navbar = () => {
         // Can use TailwindCSS later on to fix class properties
         <div>
             <nav>
-                <ul>
-                    <li>
-                        <Link className="" to="/">Show Creators</Link>
+                <ul className="p-5 border-sky-500 space-x-2">
+                    <li className="inline">
+                        <Link className="p-3 rounded-xl bg-sky-500 text-inherit hover:text-inherit hover:bg-sky-600" to="/">Show Creators</Link>
                     </li>
-                    <li>
-                        <Link className="" to="/new">Add Creator</Link>
+                    <li className="inline">
+                        <Link className="p-3 rounded-xl bg-sky-500 text-inherit hover:text-inherit hover:bg-sky-600" to="/new">Add Creator</Link>
                     </li>
                 </ul>
             </nav>

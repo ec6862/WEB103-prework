@@ -27,7 +27,7 @@ const ShowCreators = () => {
     }, []);
 
     return (
-        <div className="text-3xl font-bold underline">
+        <div className="border-2 rounded-lg ">
             {
                 list.map((post, i) =>
                     list.length > 0 ? (
