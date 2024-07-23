@@ -12,11 +12,11 @@ const Card = ({name, url, description, imageURL}) => {
     }
 
     return (
-        <div>
+        <div className="p-6 rounded-xl border-sky-500 border-2">
             <p>Name: {name}</p>
             <a href={ensureHttp(url)} target="_blank" rel="noopener noreferrer">URL: {url}</a> {/*for some reason, we need "https://" for the link to work */}
             <p>Description: {description}</p>
-            <p>Image: {imageURL}</p>
+            <img src={imageURL} alt="Image: " className="w-20 h-20"></img> {/*Note: img must not have ANYTHING between the closing mark, or must be self-closing */}
         </div>
     )
 }

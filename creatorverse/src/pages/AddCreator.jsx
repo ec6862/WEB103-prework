@@ -7,11 +7,13 @@ const AddCreator = () => {
     const [url, setUrl] = useState("");
     const [description, setDescription] = useState("");
     const [imageURL, setImageURL] = useState("");
+    const [notification, setNotification] = useState("");
 
     const addNewCreator = async (event) => {
         event.preventDefault();
         const { data, error } = await supabase.from("creators").insert({name: name, url: url, description: description, imageURL: imageURL}).select();
         console.log(data, error);
+        setNotification("Post created successfully!");
     }
 
     return (
@@ -46,6 +48,17 @@ const AddCreator = () => {
                 />
             </form>
             <button onClick={addNewCreator}>Submit</button>
+            {
+                notification != "" ? (
+                    <div>
+                        {notification}
+                    </div>
+                ) : (
+                    <div> 
+
+                    </div>
+                )
+            }
         </div>
     );
 };

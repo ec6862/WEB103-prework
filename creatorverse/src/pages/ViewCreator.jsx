@@ -8,9 +8,17 @@ const ViewCreator = () => {
     const index = parseInt(params.symbol, 10);
     const navigate = useNavigate(); // note that navigate function is used here to teleport to the edit page instead of the typical <Link>
     const [list, setList] = useState([]);
+    const [notification, setNotification] = useState("");
 
     const handleEditClicker = () => {
         navigate(`/edit/${index}`);
+    }
+
+    const deletePost = async (event) => {
+        event.preventDefault();
+        await supabase.from("creators").delete().eq("id", index);
+
+        setNotification("Post deleted successfully!");
     }
 
     useEffect(()  => {
@@ -52,6 +60,18 @@ const ViewCreator = () => {
                 )
             }
             <button onClick={handleEditClicker}>Edit</button>
+            <button onClick={deletePost}>Delete</button>
+            {
+                notification != "" ? (
+                    <div>
+                        {notification}
+                    </div>
+                ) : (
+                    <div> 
+
+                    </div>
+                )
+            }
         </div>
     )
 }

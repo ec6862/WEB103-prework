@@ -27,7 +27,7 @@ const ShowCreators = () => {
     }, []);
 
     return (
-        <div className="border-2 rounded-lg ">
+        <div className="border-2 rounded-lg border-sky-500 p-5">
             {
                 list.map((post, i) =>
                     list.length > 0 ? (
