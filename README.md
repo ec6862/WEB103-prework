@@ -24,10 +24,10 @@ Your **mission** 🧑‍🚀 is to build a frontend that supports CRUD (create, 
 
 The **purpose** of your app is to share **at least five** creators you think are worth following and give yourself the ability to create, update, and delete creators. Each `Creator` should have:
 
-- [ ] a `name`
-- [ ] a `url` (the link to their channel or page)
-- [ ] a `description`
-- [ ] (optional) an `imageURL` that links to a picture of the creator or some of their content
+- [x] a `name`
+- [x] a `url` (the link to their channel or page)
+- [x] a `description`
+- [x] (optional) an `imageURL` that links to a picture of the creator or some of their content
 
 You **must** use React to create your app, and you may *optionally* use PicoCSS to style HTML elements.
 
