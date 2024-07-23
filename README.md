@@ -53,4 +53,4 @@ Let's get started! 🚀
 
 - [ ] Use [**Picocss**](https://picocss.com/) to style HTML elements
 - [ ] Display content creator items in a creative format, like cards instead of a list
-- [ ] Show an image of each content creator on their content creator card
+- [x] Show an image of each content creator on their content creator card
