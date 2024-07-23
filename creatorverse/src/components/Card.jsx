@@ -8,6 +8,9 @@ const Card = ({name, url, description, imageURL}) => {
     return (
         <div>
             <p>Name: {name}</p>
+            <p>URL: {url}</p>
+            <p>Description: {description}</p>
+            <p>Image: {imageURL}</p>
         </div>
     )
 }

@@ -10,18 +10,20 @@ const EditCreator = () => {
     const [url, updateURL] = useState("");
     const [description, updateDescription] = useState("");
     const [imageURL, updateImageURL] = useState("");
+    const [notification, setNotification] = useState("");
 
     const editPost = async (event) => {
         event.preventDefault();
 
         const { data, error } = await supabase
         .from("creators")
-        .update({name: name, url: url, description: description})
+        .update({name: name, url: url, description: description, imageURL: imageURL})
         .eq("id", index)
         .select();
 
         if (data) {
             console.log("Post updated successfully:", data);
+            setNotification("Post updated successfully!");
         } else if (error) {
             console.error("Error updating post:", error.message);
         }
@@ -31,7 +33,7 @@ const EditCreator = () => {
         event.preventDefault();
         await supabase.from("creators").delete().eq("id", index);
 
-        console.log("Post deleted successfully!");
+        setNotification("Post deleted successfully!");
     }
 
     useEffect(() => {
@@ -107,6 +109,17 @@ const EditCreator = () => {
             }
             <button onClick={editPost}>Edit</button>
             <button onClick={deletePost}>Delete</button>
+            {
+                notification != "" ? (
+                    <div>
+                        {notification}
+                    </div>
+                ) : (
+                    <div> 
+
+                    </div>
+                )
+            }
         </div>
     )
 }

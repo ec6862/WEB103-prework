@@ -16,7 +16,7 @@ const AddCreator = () => {
 
     return (
         <div>
-            <form>
+            <form className="items-center">
                 <label>Name</label>
                 <input
                     type="text" 
@@ -25,7 +25,6 @@ const AddCreator = () => {
                     // testing from creatorverse, idk what it does
                 />
                 <label>
-                    "URL"
                     <p>URL for something</p>
                 </label>
                 <input

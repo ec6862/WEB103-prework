@@ -33,7 +33,7 @@ const ShowCreators = () => {
                     list.length > 0 ? (
                         <div key={i}> 
                             <Link to={`/ViewCreator/${post.id}`}>
-                                <Card name={post.name}/>
+                                <p>Name: {post.name}</p>
                             </Link>
                         </div>
                     ) : <p>No posts available</p>
