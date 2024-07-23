@@ -35,19 +35,19 @@ Let's get started! 🚀
 
 ### Required Features
 
-- [ ] Use a logical component structure in React to create the frontend of the app
-- [ ] Display **at least five** content creators on the homepage of the app
-- [ ] Each content creator item includes:
-  - [ ] their `name`
-  - [ ] a link to their channel or page
-  - [ ] a short description of their content
-- [ ] API calls use the async/await design pattern via Axios or fetch
-- [ ] Clicking on a content creator item takes the user to their details page, which includes their `name`, `url`, and `description`
-- [ ] Each content creator has their own unique URL
-- [ ] The user can edit a content creator to change their `name`, `url`, or `description`
-- [ ] The user can delete a content creator
-- [ ] The user can add a new content creator by entering a `name`, `url`, and `description`
-  - [ ] The new content creator then appears in the displayed list
+- [x] Use a logical component structure in React to create the frontend of the app
+- [x] Display **at least five** content creators on the homepage of the app
+- [x] Each content creator item includes:
+  - [x] their `name`
+  - [x] a link to their channel or page
+  - [x] a short description of their content
+- [x] API calls use the async/await design pattern via Axios or fetch
+- [x] Clicking on a content creator item takes the user to their details page, which includes their `name`, `url`, and `description`
+- [x] Each content creator has their own unique URL
+- [x] The user can edit a content creator to change their `name`, `url`, or `description`
+- [x] The user can delete a content creator
+- [x] The user can add a new content creator by entering a `name`, `url`, and `description`
+  - [x] The new content creator then appears in the displayed list
 
 ### Stretch Features
 
