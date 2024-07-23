@@ -46,12 +46,12 @@ GIF created with 👉🏿 ScreenToGif
 
 ## Notes
 
-Describe any challenges encountered while building the app or any additional context you'd like to add.
+Describe any challenges encountered while building the app or any additional context you'd like to add. </hr>
 The prework helped me hone my web development skills from WEB102, and helped me add comments to where I struggle at. Specifically at when I am writing this (7/23), I researched how to correctly format links, (like needing "https://" or it doesn't work), and how to input images properly. Doing the prework also helped me remember some shortcuts I picked up along the way, such as using events within onChange to simplify the code rather than writing new functions, and conditional rendering. I started the prework two weeks ago, but have been trying to pick up new CSS materials to practice with, such as TailwindCSS, and have been trying to use it daily so that I remember it, and hope to submit it soon.
 
 ## License
 
-Copyright [👉🏿 yyyy] [👉🏿 name of copyright owner]
+Copyright [2024] [Eric Chen]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
